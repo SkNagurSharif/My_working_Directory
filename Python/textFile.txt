@@ -1,0 +1,6 @@
+To read necessery libraries from text document 
+python -m pip install -r fileRelativePath\requirements.txt
+
+
+from directly there 
+pip install -U behave
