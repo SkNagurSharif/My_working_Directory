@@ -1,0 +1,13 @@
+To create Maven project 
+
+Go to the respective folder where need to create project
+
+<path of the mvn.cmd file> 
+org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate 
+-DarchetypeArtifactId="maven-archetype-quickstart" 
+-DarchetypeGroupId="org.apache.maven.archetypes" 
+-DarchetypeVersion="1.4" 
+-DgroupId="Company Name" 
+-DartifactId="Project Name" 
+
+"D:\SoftwareCenterApplications\Apache_Maven\bin\mvn.cmd" org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate -DarchetypeArtifactId="maven-archetype-quickstart" -DarchetypeGroupId="org.apache.maven.archetypes" -DarchetypeVersion="1.4" -DgroupId="nightly" -DartifactId="oilAndGas" 

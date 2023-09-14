@@ -1,6 +1,446 @@
+Create a virtual Environment
+1. Go to the folder where need to create Virtual Environment
+2. Run the following commands
+        pip install virtualenv
+        python<version> -m venv <virtual-environment-name> 
+            or
+        python -m venv <virtual-environment-name> 
+
+3. Activate the environment
+    in Power shell
+        Environment-name\Scripts\Activate.ps1
+
+    in cmd
+        Environment-name/Scripts/activate.bat
+====================================================================================================================
+
+Test Automation Frameworks Types:
+Each automation framework has its own architecture, advantages, and disadvantages. Some of these frameworks are:
+
+Linear Automation Framework
+Modular Driven Framework
+Behavior Driven framework
+Data-Driven Framework
+Keyword-Driven Framework
+Hybrid Testing Framework
+1) Linear Automation Framework
+The linear Automation framework is commonly used in the testing of small applications. This framework is also called as a Record and playback framework.
+
+Pros: There is no need to write custom code, so expertise in test automation is not necessary.
+
+Cons: The data is hardcoded in the test script; hence, the test cases cannot be re-run with multiple sets. You need to make some changes if the data is altered.
+
+2) Modular Driven Framework
+In this Framework, the tester can create test scripts module wise by breaking down the whole application into smaller modules as per the client requirements and create test scripts individually.
+
+Pros: Modular driven framework ensures the division of scripts that leads to easier maintenance and scalability. You can write independent test scripts.
+
+Cons: The modular driven framework requires additional time in analyzing the test cases and identifying reusable flows.
+
+
+
+3) Behavior Driven Development Framework
+Behavior Driven Development framework is to create a platform, which allows every person, like Developers, Testers, business analyst, etc., to participate actively. It also increases collaboration between the tester and the developers on your project.
+
+Pros: You can use non-technical, natural language to create test specifications on this behavior-driven testing.
+
+Cons: To work with this framework, sufficient technical skills as well as prior experience in Test driven development is required.
+
+4) Data-driven Testing Framework
+Generally, Test Data is read from the external files like Excel Files, Text Files, CSV Files, ODBC Sources, DAO Objects and they are loaded into the variables inside the Test Script. The data-driven framework allows us to create test automation scripts by passing different sets of test data.
+
+Pros: It reduces the number of scripts required. Hence, multiple scenarios can be tested in less code.
+
+Cons: You will need a highly experienced tester who should be proficient in various programming languages to completely utilize the design of this framework.
+
+5) The Keyword-Driven Testing Framework
+The keyword-Driven Testing framework is also known as table-driven testing. This framework is suitable only for small projects or applications. The automation test scripts performed are based on the keywords specified in the excel sheet of the project.
+
+Pros: A single keyword can be used across multiple test scripts, so the code is reusable.
+
+Cons: The initial cost of setting up the framework is high, and it is time-consuming & complex. 
+
+6) The Hybrid test Automation Framework
+Hybrid Framework is used to combine the benefits of Keyword Driven and Data-Driven frameworks.
+
+Pros: This type leverages the advantages of all kinds of related frameworks.
+
+Cons: Tests are fully scripted in a Hybrid Testing Framework thus increases the automation effort.
+
+
+
+
+
+
+=========================================        BDD         =============================================================        
+
+The primary goal of behavior-driven development (BDD) approach is to drive development with behaviour expected from end user in mind.
+Main purpose of testing strategy is to understand requirements before they are implemented.
+BDD encourages collaboration among 3 Amigos (Business Participants, Developers and QA or Testers).
+In ATDD acceptance tests are derived from acceptance criteria.
+Collective code ownership practice relates to test first.
+
+
+Tools like Cucumber, SpecFlow, and Behave use Gherkin syntax to define and execute tests, ensuring that the software behaves as expected.
+        BDD Operates on directories containing 
+            a). Feature files = User Stories --> for writing business behaviour scenarios
+            b). scenarios = behaviors --> Contains steps dexcribe the action and expected outcome.
+            b). Steps = Examples --> For implementing python steps for testing
+        
+        Comments can be added with the # symbol
+        Anything after this symbol on a line in a Gherkin document is ignored by the parser.
+
+        Feature files: 
+        ----------------------------------------
+        1. .feature extention.
+        2. Provides a brief description of the file about user perspective. 
+
+        scenario: 
+        ----------------------------------------
+        1. Provideshow the software feature should behave under various conditions.
+        2. Contains steps dexcribe the action and expected outcome.
+        3. Each scenario can contain multiple steps.
+        4. Scenario Name is not Mandatory but advisable to give. 
+
+        Background:
+        ----------------------------------------
+        1. Provides steps that are common to all the scenarios in the feature. 
+        2. These steps are run before each scenario.
+
+        Scenario Outline (or Scenario Template):
+        ----------------------------------------
+        1. Allows you to run the same scenario multiple times but with different input values. 
+        2. Each set of values is referred to as an example.
+        3. Used to Data Driven using examples or placeholder or Data Table.
+
+        Examples:
+        ---------------------------------------- 
+        1. Used in conjunction with "Scenario Outline".
+        2. It provides the values to use in the scenario and steps.
+
+        
+        @tag:
+        ------------------------------------------
+        1. Though not a keyword in the traditional sense.
+        2. tags (preceded by "@") are used to categorize scenarios or features.
+        3. Make easier to include or exclude scenarios and features when the tests are run.
+        4. By grouping them we can see the results clearly
+        
+        Given: 
+        -----------------------------------------
+        1. Describes an initial context or state (precondition step). 
+        2. It sets the scene for the scenario, often describing preconditions.
+
+        When:
+        -----------------------------------------
+        1. Describes an action or event. 
+        2. It’s what you do to the system.
+        3. It provides key actions
+
+        Then:
+        -----------------------------------------
+        1. Describes an expected outcome or result.
+        2. It verifies that the system behaves as expected after the action.
+
+        And, But:
+        -----------------------------------------
+        1. These can be used to continue any of the three step types (Given, When, Then).
+        2. They are useful for adding additional conditions or outcomes.
+
+        """ (Doc Strings): 
+        --------------------------------------------------
+        1. This allows for longer pieces of text to be passed as arguments.
+        2. They are like multi-line strings.
+        
+        | (Data Tables):
+        --------------------------------------------------
+        1. These allow structured data to be passed as arguments to steps.
+        2. Used to present the data values in tabular form.
+
+        < > (placeholder):
+        ---------------------------------------------
+        To indicate examples on behalf of which data u have to pass the values.
+
+        
+        Rule:
+        -----------------------------------------
+        1. Represents a business rule that will be implemented. 
+        2. It groups together several scenarios related scenarios under a business rule.
+        3. The primary rule keyword in Gherkin is Rule.
+        4. It was introduced in more recent versions of the language 
+        5. It provides additional context and can be useful for organizing large feature files.
+        6. It's important to note that Rule is just an organizational tool.
+        7. And its use doesn't affect the execution of the scenarios within it.
+
+        
+    Example 1 Using some Keywords:
+    ------------------------------------------------------------------------------------------
+        Feature: Login functionality for the web application
+
+        Background:
+            Given the application is up and running
+            And I am on the login page
+
+        Scenario Outline: Successful login with valid credentials
+            Given I have entered <username> as a username
+            And I have entered <password> as a password
+            When I press the login button
+            Then I should be taken to the dashboard
+            And I should see a welcome message
+
+            Examples:
+            | username | password |
+            | user1    | pass1    |
+            | user2    | pass2    |
+
+        @skip
+        Scenario: Failed login with invalid credentials
+            Given I have entered "wrongUser" as a username
+            And I have entered "wrongPass" as a password
+            When I press the login button
+            Then I should see an error message
+
+        Rule: Password validation
+            Example: Passwords must be at least 8 characters
+                Given I have entered "user" as a username
+                And I have entered "short" as a password
+                When I press the login button
+                Then I should see a password length error
+
+            Example: Passwords must contain a number
+                Given I have entered "user" as a username
+                And I have entered "noNumber" as a password
+                When I press the login button
+                Then I should see a password validation error
+
+        Keywords used in the above example:
+
+        Feature --> Describes a software feature to be tested.
+        Background --> Describes steps that are common to all the scenarios in the feature.
+
+        Scenario Outline --> Allows the same scenario to run with different input values.
+        Scenario --> Describes a specific situation or use case.
+        
+        Examples --> Contains the input values for the Scenario Outline.
+        Given --> Describes a known context or state before an action.
+        When --> Describes the action that causes the event.
+        Then --> Describes the expected outcome or result.
+        And --> Continuation for any of the Given, When, Then steps.
+        
+        Rule --> Groups together several related scenarios or scenario outlines.
+        Example --> (under Rule) It’s used to describe scenarios inside a Rule.
+        @skip --> An example of a tag. Tags are a way to group scenarios, and they're preceded by the "@" symbol.
+
+    Example2 using some Keywords: 
+    -----------------------------------------------------------------------------------------------------------------
+
+# This is a comment
+
+Feature: User login
+
+  Background:
+    Given the application is open
+
+  Scenario Outline: User tries to login with <type> credentials
+    Given I am on the login page
+    When I enter the <username>
+    And I enter the <password>
+    Then I should see the <outcome>
+
+    Examples:
+      | type      | username | password | outcome                        |
+      | valid     | user1    | pass1    | Welcome page                   |
+      | invalid   | user1    | wrong    | Incorrect username or password |
+
+  Scenario: User forgets password
+    Given I am on the login page
+    When I click on the "Forgot Password" link
+    Then I should be taken to the password recovery page
+
+  @database
+  Scenario: Database logs
+    Given I am an admin
+    When a user tries to login
+    Then the attempt should be logged in the database
+
+  Rule: Password strength
+    Example: Weak password
+      Given I am on the change password page
+      When I try to set my password as "123456"
+      Then I should see a warning about weak passwords
+
+    Example: Strong password
+      Given I am on the change password page
+      When I try to set my password as "aB3!fG9@"
+      Then my password should be successfully changed
+
+---------------------------------------------------------------------------------------------------------------
+
+Parameterization:
+
+        1. Parameterization in BDD allows scenarios to be run multiple times with different input values. 
+        2. This can be particularly useful when you want to test the same behavior under different conditions or data sets without duplicating scenarios. 
+        3. By using parameterized scenarios, you can increase the coverage of your tests with minimal added complexity.
+        4. It allows for more extensive testing without the need to write separate scenarios for each set of input data.
+
+Here are different ways of parameterizing data in BDD:
+
+Step Definition Parameterization:
+--------------------------------------------- 
+Even within a single scenario, steps can be parameterized to accept different values. 
+In the Gherkin language, this is done by enclosing the parameterized parts in double quotes or using regular expressions in the step definition (depending on the language of the step definition implementation).
+
+            Given I have "5" apples
+            When I eat "3" apples
+            Then I should have "2" apples left
+
+Scenario Outline with Examples:
+---------------------------------------------
+Using tools like Cucumber or SpecFlow, you can define a "Scenario Outline" which describes a template of the scenario, 
+and then provide multiple sets of input values using the "Examples" table. 
+The scenario is then executed for each row in the Examples table.
+
+        Scenario Outline: Eating cucumbers
+            Given there are <start> cucumbers
+            When I eat <eat> cucumbers
+            Then I should have <left> cucumbers
+
+        Examples:
+            | start | eat | left |
+            | 12    | 5   | 7    |
+            | 20    | 5   | 15   |
+
+Data Tables:
+-----------------------------------------
+If a scenario requires multiple values (like a list) as input, you can use data tables. 
+This approach is useful for scenarios where the exact number of items or attributes might vary.
+
+        Scenario: Register multiple users
+            Given the following users exist:
+                | name  | age | email          |
+                | Alice | 28  | alice@email.com|
+                | Bob   | 35  | bob@email.com  |
+
+
+Doc Strings:
+------------------------------------------
+Doc Strings allow for long-form data to be passed as parameters. 
+They're often used for scenarios where you might need to supply larger chunks of text, like JSON payloads or XML content.
+
+        Scenario: Post a new blog
+            Given I have the following blog post content:
+            """
+            {
+                "title": "BDD and Parameterization",
+                "content": "This blog talks about..."
+            }
+            """
+            When I post the blog
+            Then it should be published successfully
+
+External Data Sources:
+-------------------------------------------
+For tools that support it, you can also parameterize your tests using external data sources, such as CSV files, databases, or even API calls. 
+This approach often requires additional setup and integration within the BDD tool or its plugins.
+
+When it comes to utilizing an external data source for parameterization in BDD, it essentially means you're sourcing your input data from an external file or database rather than hardcoding it into your BDD scenarios.
+
+Here's a general approach to achieve external data source parameterization in BDD:
+
+1. Choose a BDD tool: Tools like Cucumber, SpecFlow, and Behave support scenario outlines and examples that can be used for parameterization.
+
+2. Select a format for your external data: Commonly used formats include CSV, Excel, JSON, or databases like MySQL, PostgreSQL, etc.
+
+3. Implement a utility or hook: This utility will read the data from your chosen external data source and feed it into your BDD scenarios. Depending on the tool you're using, this might involve implementing hooks (like before a scenario starts) or utilizing plugins/extensions that support this functionality.
+
+4. Modify your feature files: In your feature files, instead of writing static scenarios, use scenario outlines and placeholders for data that will be parameterized.
+
+5. Bind the external data: Use the utility or hook from step 3 to bind the data from the external source to your scenario placeholders.
+
+Example :
+
+Define your feature using Scenario Outline:
+
+Feature: Login functionality
+
+  Scenario Outline: Logging in with different sets of credentials
+    Given I am on the login page
+    When I enter username "<username>" and password "<password>"
+    Then I should see the result "<result>"
+
+  Examples:
+    | username | password | result   |
+    |          |          |          | 
+
+Implement a utility to read, let's say, a CSV file:
+java code:
+
+public List<Map<String, String>> readCSV(String path) {
+    // Implementation to read a CSV and return a list of maps
+}
+
+Before the scenario starts, use a hook to feed data from the CSV into your scenario:
+
+java code: 
+
+@Before
+public void feedData() {
+    List<Map<String, String>> data = readCSV("path_to_csv");
+    // Use the data to feed into your scenario
+}
+
+Adjust your step definitions to utilize the data.
+This is a very high-level overview. Depending on your BDD tool, programming language, and external data source, the exact implementation details may vary. The key is to have an intermediary layer that can read and interpret the external data, and then feed it into your BDD scenarios as needed.
+
+
+Tagging Scenarios:
+------------------------------------------
+While not strictly for parameterization, tags can be used in conjunction with parameterized scenarios to easily identify, group, and filter them during test execution.
+
+Custom Parameter Types (Transforms):
+-------------------------------------------
+Some BDD tools, like Cucumber, offer the ability to define custom parameter types. 
+This feature allows you to specify a pattern that captures a piece of text in a step and then transforms it into a specific type or object. 
+For example, you could transform a date string into a Date object.
+
+
+================================================================================================================
+        steps 
+        ----------------------------------------
+        1. 
+        2. 
+
+Cucumber is an open source testing tool used in BDD.
+It provides a way to generate tests that everyone can understand.
+
+Problem :
+A leading Oil and Gas firm was willing to transform and evolve along with rapidly changing software development life cycle events. They wanted to be uptospeed in technology to ensure that quality of their product were of high standard while assuring fast delivery of them to their customers.  This required a transition to agile software development accelerated through DevOps. One of thier large operations program was identified as a pilot for this transition. 
+
+The large program wanted to have an Agile based project development/testing with technology-friendly, flexible, robust and scalable automation framework was required with a focus on below key points -
+
+1. Achieve quick Time to Market
+
+2. Flexibility in line with business expectations
+
+3. Implement shift left approach with Continuous Integration and Continuous Delivery capabilities 
+
+4. Create a solution that would decrease cost and effort while increasing quality with the best tools and resources for the job
+
+5. Achieve an optimal level of automation
+
+https://lex.infosysapps.com/content-store/Infosys/Infosys_Ltd/Public/lex_auth_013092849854455808372/web-hosted/assets/diff21620909438493.JPG
+
+https://lex.infosysapps.com/content-store/Infosys/Infosys_Ltd/Public/lex_auth_013092844994969600379/web-hosted/assets/Capture131620734353813.JPG
+
+https://lex.infosysapps.com/content-store/Infosys/Infosys_Ltd/Public/lex_auth_013092844994969600379/web-hosted/assets/terms11620834251486.JPG
+
+==========================================================================================================================
+
+
+For Python testing Floowing libraries are needed
+    1. behave --> BDD framework which have to  in Gherkin language
+        from directly there 
+            pip install -U behave
+
 To read necessery libraries from text document 
 python -m pip install -r fileRelativePath\requirements.txt
-
-
-from directly there 
-pip install -U behave

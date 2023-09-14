@@ -1,0 +1,47 @@
+============================    Cucumber using Java    =========================================================================================
+Nightly builds
+
+
+A leading Oil and Gas firm was willing to transform and evolve along with rapidly changing software development life cycle events. They wanted to be uptospeed in technology to ensure that quality of their product were of high standard while assuring fast delivery of them to their customers.  This required a transition to agile software development accelerated through DevOps. One of thier large operations program was identified as a pilot for this transition. 
+
+The large program wanted to have an Agile based project development/testing with technology-friendly, flexible, robust and scalable automation framework was required with a focus on below key points -
+
+1. Achieve quick Time to Market
+
+2. Flexibility in line with business expectations
+
+3. Implement shift left approach with Continuous Integration and Continuous Delivery capabilities 
+
+4. Create a solution that would decrease cost and effort while increasing quality with the best tools and resources for the job
+
+5. Achieve an optimal level of automation
+
+The team created an agile process enabled DevOps delivery and automation. To automate acceptance tests and to ensure application behaviour matches with expectations, BDD was adopted. Scenarios were written in Gherkin language syntax. This was integrated with TFS for test case running and collating results. This automation ensured that the scripts can run during off peak hours/nightly job runs. BDD dashboards were created to check the results.
+
+Here are the key benefits delivered:
+
+Faster time to market:
+
+    2000+ Functional Test Cases and 200+ E2E workflows i.e. ~80%  automation achieved
+
+    Reduction in testing cycle from 4 weeks to 1 week
+
+Cost Savings – $300k/Year
+
+    ‘Zero’ critical defects in production in last 1 year
+
+    Build is validated for every deployment
+
+    Lower manual intervention
+
+    Reduced environment dependency
+
+Customized solution
+
+    Solution is easily customizable to include changes to Business scenarios
+
+    Complex E2E workflows can be added or modified
+
+This shows the importance of using automated acceptance test cases and the benefits accrued.
+
+======================================================================================================================
