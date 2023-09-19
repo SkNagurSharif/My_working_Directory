@@ -1,0 +1,25 @@
+python -m venv env
+
+env/bin/activate
+
+python -m pip install django
+
+# Optional
+python -m pip freeze > requirements.txt
+python -m pip install django==2.2.11
+python -m pip install -r requirements.txt
+
+
+or
+
+pip install django djangorestframework
+django-admin startproject <project-name>
+
+django-admin startproject portfolio_backend
+cd portfolio_backend  # change directory to project folder
+
+python manage.py startapp projects
+
+
+
+

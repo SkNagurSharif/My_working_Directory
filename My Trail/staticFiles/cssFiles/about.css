@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    
+    font-family: Arial, sans-serif;
+    /* Gradient background */
+    background: linear-gradient(to right, #0494f4, #4286f4);
+    color: #ecf0f1; /* Light text color for better visibility against the dark background */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 0 20px;  Some horizontal padding for breathing space */
+}
+
+header .brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header #logo {
+    height: 80px;       /* increased from 50px */
+    width: 80px;        /* Make sure the width is the same as the height to ensure a circle for square images */
+                        /* increased from 50px and made same as height to maintain the circle shape */
+    margin-right: 15px;
+    border-radius: 50%; /* keeps it circular */
+    object-fit: cover;  /* This ensures the image scales correctly inside the defined size */
+}
+
+header h1 {
+    margin: 0;
+    color: #ecf0f1;
+    font-size: 1.5em;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#about-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;  /* Gives a circular shape */
+    border: 3px solid #333;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h1, .about-content h2 {
+    color: #333;
+}
+
+.about-content p, .about-content ul {
+    color: #555;
+}
+
+footer {
+    
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9em;
+    
+    /*position: fixed;*/
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center; /* Center brand in the footer */
+}
+
+footer #footer-logo {
+    height: 40px;
+    width: 40px; /* Make sure the width is the same as the height to ensure a circle for square images */
+    margin-right: 10px;
+    border-radius: 50%; /* This makes it circular */
+    object-fit: cover; /* This ensures the image scales correctly inside the defined size */
+}
+
+
+footer h1 {
+    margin: 0;
+    color: #ecf0f1;
+    font-size: 1.2em;
+}
+
+
+.contact, .social-links, .copyright {
+    flex: 1;
+    text-align: center;
+}
+
+.contact h3, .social-links h3 {
+    border-bottom: 2px solid #ecf0f1;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #ecf0f1;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.copyright {
+    font-size: 0.8em;
+}
+
+/* For responsiveness, let's stack the content on small screens */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
