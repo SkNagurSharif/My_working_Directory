@@ -1,0 +1,7 @@
+Django>=3.2
+mysqlclient>=2.0  # For MySQL support
+djongo>=1.3 # For MongoDB support
+pymongo>=3.11  # Dependency for Djongo
+Pillow>=8.1      # For handling image uploads, e.g., user avatars in profiles
+djangorestframework>=3.12  # If you plan on using Django for building APIs in the future
+
