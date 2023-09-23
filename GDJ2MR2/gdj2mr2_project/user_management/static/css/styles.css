@@ -1,0 +1,24 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.app-logo {
+    width: 50px;  /* Adjust as necessary */
+    height: auto; /* This ensures the logo maintains its aspect ratio */
+    margin-right: 10px; /* Spacing between the logo and the brand text */
+    border-radius: 50%; /* Optional: if you want the logo to be rounded */
+}
+
+.navbar-brand img {
+    border-radius: 50%;   /* This will make the logo round */
+    margin-right: 10px;   /* Optional: Adding some margin for spacing */
+    border: 2px solid #fff; /* Optional: Adding a white border */
+}
+
